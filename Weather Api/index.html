@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="./assets/css/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Font -->
+    <link rel="stylesheet" href="./assets/css/font.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/images/weather.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="weather-card row w-100">
+
+            <!-- ================= LEFT CARD ================= -->
+            <div class="col-md-6 left-card text-white text-center p-4 flex-fill">
+                <h3 id="day">SUNDAY</h3>
+                <p id="date">4 January 2026</p>
+
+                <img id="icon" class="weather-icon" src="./assets/images/logo-1.png" alt="weather icon">
+
+                <h1 id="temp" class="main-temp">--°C</h1>
+                <p id="condition" class="weather-condition">---</p>
+            </div>
+
+            <!-- ================= RIGHT CARD ================= -->
+            <div class="col-md-6 right-card text-white p-4 flex-fill">
+
+                <!-- SEARCH -->
+                <div class="search-box d-flex mb-4">
+                    <input type="text" id="city" class="form-control" placeholder="Search Location">
+                    <button type="button" class="btn" onclick="getWeather()">
+                        Search
+                    </button>
+                </div>
+
+                <!-- DETAILS CARDS -->
+                <div class="details-grid mb-4">
+
+                    <div class="info-card">
+                        <i class="bi bi-geo-alt"></i>
+                        <span id="name">---</span>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="bi bi-thermometer-half"></i>
+                        <span id="temp2">--°C</span>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="bi bi-droplet"></i>
+                        <span id="humidity">--%</span>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="bi bi-wind"></i>
+                        <span id="wind">-- km/h</span>
+                    </div>
+
+                </div>
+
+                <!-- FORECAST -->
+                <div class="forecast" id="forecast"> </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="./assets/script/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="./assets/script/script.js"></script>
+
+</body>
+
+</html>

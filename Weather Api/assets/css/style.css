@@ -1,0 +1,201 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* ================= ROOT ================= */
+:root {
+  --primary: #4da3ff;
+  --secondary: #1e2933;
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --text-light: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.7);
+}
+
+/* ================= BODY ================= */
+body {
+  min-height: 100vh;
+  background: #2f3e46;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ================= MAIN CARD ================= */
+.weather-card {
+  width: 850px;
+  background: #1f2933;
+  border-radius: 22px;
+  overflow: hidden;
+  animation: fadeIn 0.8s ease;
+}
+
+/* ================= LEFT CARD ================= */
+.left-card {
+  background: linear-gradient(180deg, #3a86ff, #1b263b);
+  text-align: center;
+  padding: 40px 25px;
+  
+}
+
+.left-card h3 {
+  letter-spacing: 2px;
+}
+
+.left-card p {
+  color: var(--text-muted);
+}
+
+.weather-icon {
+  width: 120px;
+  margin: 25px 0;
+  animation: float 3s ease-in-out infinite;
+}
+
+.main-temp {
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--text-light);
+}
+
+.weather-condition {
+  letter-spacing: 3px;
+  text-transform: capitalize;
+  opacity: 0.85;
+}
+
+/* ================= RIGHT CARD ================= */
+.right-card {
+  background: var(--secondary);
+  padding: 40px 30px;
+}
+
+/* ================= SEARCH ================= */
+.search-box {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 30px 0 0 30px;
+  border: none;
+}
+
+.search-box input:focus {
+  outline: none;
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.search-box button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 0 30px 30px 0;
+  background: linear-gradient(45deg, #4cc9f0, #4361ee);
+  color: white;
+  cursor: pointer;
+}
+
+/* ================= DETAILS ================= */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.info-card {
+  background: var(--card-bg);
+  padding: 14px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+.info-card i {
+  font-size: 20px;
+  color: var(--primary);
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ================= FORECAST ================= */
+.forecast {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.forecast-card {
+  width: 80px;
+  background: var(--card-bg);
+  padding: 15px 10px;
+  border-radius: 16px;
+  text-align: center;
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+.forecast-card p {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.forecast-card i {
+  font-size: 22px;
+  margin: 6px 0;
+}
+
+.forecast-card span {
+  font-size: 15px;
+}
+
+.forecast-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.forecast-card.active {
+  background: linear-gradient(180deg, #4da3ff, #357ae8);
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .weather-card {
+    width: 95%;
+  }
+
+  .forecast {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
